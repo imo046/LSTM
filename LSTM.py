@@ -24,11 +24,11 @@ from keras.layers import LSTM
 from datetime import datetime
 from sklearn import preprocessing
 from sklearn.model_selection import train_test_split
-# load dataset
 
+# load dataset
 dataset = pd.read_csv('sensor-data.csv', index_col = 0)
 dataset.fillna(0, inplace=True)
-#'Temp','Relative-humidity','Motion','Nr-People'
+
 #We use number of computers to reduce RMSE
 df = dataset[['Nr-People','Nr-Computers','Motion', 'Brightness', 'Noise','Relative-humidity']]
 values = df.values
